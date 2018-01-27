@@ -8,7 +8,7 @@ To install this library, run:
 $ npm install ngx-tui-editor --save
 ```
 
-## Consuming your library
+## Setup
 
 To install, simply run:
 

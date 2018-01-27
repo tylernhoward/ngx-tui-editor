@@ -1,0 +1,28 @@
+{
+  "name": "ngx-tui-editor",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylernhoward/ngx-tui-editor"
+  },
+  "author": {
+    "name": "Tyler Howard",
+    "email": "tylernhoward@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tylernhoward/ngx-tui-editor/issues"
+  },
+  "main": "ngx-tui-editor.umd.js",
+  "module": "ngx-tui-editor.js",
+  "jsnext:main": "ngx-tui-editor.js",
+  "typings": "ngx-tui-editor.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}

@@ -1,4 +1,6 @@
-# ngx-tui-editor
+# Angular ToastUI Editor
+
+Angular 2+ plugin for tui-editor [tui-editor](https://github.com/nhnent/tui.editor)
 
 ## Installation
 

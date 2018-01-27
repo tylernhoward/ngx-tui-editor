@@ -5,7 +5,7 @@
     "build": "gulp build",
     "build:watch": "gulp",
     "docs": "npm run docs:build",
-    "docs:build": "compodoc -p tsconfig.json -n ngx-tui-editor -d docs --hideGenerator",
+    "docs:build": "compodoc -p tsconfig.json -n ngx-tui-editor -d docs --hideGenerator"
   },
   "repository": {
     "type": "git",

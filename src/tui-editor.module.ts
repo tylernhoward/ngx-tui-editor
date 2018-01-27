@@ -11,6 +11,6 @@ import { CommonModule } from '@angular/common';
         TuiComponent
     ],
     providers: [TuiService],
-    exports: [TuiComponent]
+    exports: [TuiComponent,TuiService]
 })
 export class TuiModule { }

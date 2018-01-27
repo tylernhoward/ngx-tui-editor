@@ -1,3 +1,4 @@
+import { TuiService } from './services/tui-editor.service';
 import { TuiComponent } from './components/tui-editor.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,8 +10,7 @@ import { CommonModule } from '@angular/common';
     declarations: [
         TuiComponent
     ],
-    providers: [
-    ],
+    providers: [TuiService],
     exports: [TuiComponent]
 })
 export class TuiModule { }

@@ -1,3 +1,4 @@
+import { TuiService } from './../services/tui-editor.service';
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import * as TuiEditor from 'tui-editor'
 @Component({
@@ -14,17 +15,12 @@ import * as TuiEditor from 'tui-editor'
 export class TuiComponent implements OnInit {
     @Input() options: object;
     editor: TuiEditor;
-
+    constructor(private editorService: TuiService) { }
     public ngOnInit() {
-        let editor = new TuiEditor(Object.assign({
-            el: document.querySelector('.ngx-tui-editor'),
-            initialEditType: 'markdown',
-            previewStyle: 'vertical',
-            height: '300px'
-        }, this.options));
+        this.getEditor();
     }
-    save(event) {
-        let textBlob = new Blob([this.editor.getMarkdown()], { type: 'text/plain' });
-        let textURI = URL.createObjectURL(textBlob);
+
+    async getEditor() {
+        this.editor = await this.editorService.createEditor(this.options);
     }
 }

@@ -54,7 +54,49 @@ Use in the template like so:
 </h1>
 <tui-editor [options] = "options" ></tui-editor>
 ```
-Or leave options blank for default settings
+You may pass options to the component in the following format
+```typescript
+options : {
+            initialValue: `# Title of Project` ,
+            initialEditType: 'markdown',
+            previewStyle: 'vertical',
+            height: 'auto',
+            minHeight: '500px'
+          },
+```
+
+If you wish to interact with more features of the plugin:
+
+Inject the service in the component that you wish to use the editor.
+```typescript
+import { TuiService } from 'ngx-tui-editor';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  constructor(private editorService: TuiService){} 
+  setHtml(){
+    this.editorService.setHtml("<h1>Hello World</h1>")
+  }
+}
+```
+The following functions can be called on the TuiService:
+
+| Function | Use | Returns |
+| -------- | --- | ------- |
+| getMarkdown( ) | Gets markdown syntax text from editor | string |
+| getHtml( ) | Gets html syntax text from editor | string |
+| getSelectedText( ) | Gets only selected text from editor | string |
+| insertText(text: string) | Inserts plain text into editor | void |
+| setHtml(text: string) | Inserts html text and formats into markdown in editor | void |
+| setMarkdown(text: string) | Inserts markdown text and formats into markdown syntax in editor | void |
+| hide( ) | Hides the editor pane | void |
+| show( ) | Shows the editor pane | void |
+
 
 ## Development
 

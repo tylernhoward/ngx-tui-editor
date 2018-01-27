@@ -48,7 +48,7 @@ export class AppModule { }
 Use in the template like so:
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
+<!-- You can now use the editor in any component -->
 <h1>
   {{title}}
 </h1>

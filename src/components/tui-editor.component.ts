@@ -16,13 +16,12 @@ export class TuiComponent implements OnInit {
     editor: TuiEditor;
 
     public ngOnInit() {
-        console.log(this.options);
         let editor = new TuiEditor(Object.assign({
             el: document.querySelector('.ngx-tui-editor'),
             initialEditType: 'markdown',
             previewStyle: 'vertical',
             height: '300px'
-        },this.options));
+        }, this.options));
     }
     save(event) {
         let textBlob = new Blob([this.editor.getMarkdown()], { type: 'text/plain' });

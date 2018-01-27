@@ -10,13 +10,13 @@ $ npm install ngx-tui-editor --save
 
 ## Consuming your library
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
+To install, simply run:
 
 ```bash
 $ npm install ngx-tui-editor
 ```
 
-and then from your Angular `AppModule`:
+and then from your `AppModule`:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,7 +24,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
+// Import
 import { TuiModule } from 'ngx-tui-editor';
 
 @NgModule({
@@ -34,7 +34,7 @@ import { TuiModule } from 'ngx-tui-editor';
   imports: [
     BrowserModule,
 
-    // Specify your library as an import
+    // Specify import
     TuiModule
   ],
   providers: [],
@@ -43,15 +43,16 @@ import { TuiModule } from 'ngx-tui-editor';
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Use in the template like so:
 
 ```xml
 <!-- You can now use your library component in app.component.html -->
 <h1>
   {{title}}
 </h1>
-<tui-editor></tui-editor>
+<tui-editor [options] = "options" ></tui-editor>
 ```
+Or leave options blank for default settings
 
 ## Development
 

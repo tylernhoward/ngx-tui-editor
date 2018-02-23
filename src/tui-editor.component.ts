@@ -1,12 +1,12 @@
-import { TuiService } from './../services/tui-editor.service';
+import { TuiService } from './tui-editor.service';
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import * as TuiEditor from 'tui-editor'
 @Component({
     selector: 'tui-editor',
     encapsulation: ViewEncapsulation.None,
     styleUrls: [
-        '../../node_modules/tui-editor/dist/tui-editor-contents.css',
-        '../../node_modules/tui-editor/dist/tui-editor.css',
+        '../node_modules/tui-editor/dist/tui-editor-contents.css',
+        '../node_modules/tui-editor/dist/tui-editor.css',
         './codemirror.css'
 
     ],

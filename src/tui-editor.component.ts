@@ -14,7 +14,7 @@ import * as TuiEditor from 'tui-editor'
 })
 export class TuiComponent implements OnInit {
     @Input() options: object;
-    editor: TuiEditor;
+    editor: TuiEditor.default;
     constructor(private editorService: TuiService) { }
     public ngOnInit() {
         this.getEditor();

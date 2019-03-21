@@ -5,12 +5,21 @@ export class TuiService {
   editor: any;
   constructor() { }
   createEditor(options: object): any {
-    this.editor = new TuiEditor(Object.assign({
-      el: document.querySelector('.ngx-tui-editor'),
-      initialEditType: 'markdown',
-      previewStyle: 'vertical',
-      height: '300px'
-    }, options));
+    if (options.viewer) {
+      this.editor = TuiEditor.factory(Object.assign({
+            el: document.querySelector('.ngx-tui-editor'),
+            height: '300px'
+          },
+          options));
+    } else {
+      this.editor = new TuiEditor(Object.assign({
+            el: document.querySelector('.ngx-tui-editor'),
+            initialEditType: 'markdown',
+            previewStyle: 'vertical',
+            height: '300px'
+          },
+          options));
+    }
     return this.editor;
   }
   getMarkdown(): string {

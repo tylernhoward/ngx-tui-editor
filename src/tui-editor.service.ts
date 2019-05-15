@@ -1,25 +1,18 @@
 import { Injectable } from '@angular/core';
-import * as TuiEditor from 'tui-editor'
+import Editor from 'tui-editor'
 @Injectable()
 export class TuiService {
   editor: any;
   constructor() { }
-  createEditor(options: object): any {
-    if (options.viewer) {
-      this.editor = TuiEditor.factory(Object.assign({
-            el: document.querySelector('.ngx-tui-editor'),
-            height: '300px'
-          },
-          options));
-    } else {
-      this.editor = new TuiEditor(Object.assign({
+  createEditor(options: any): any {
+      this.editor = Editor.factory(Object.assign({
             el: document.querySelector('.ngx-tui-editor'),
             initialEditType: 'markdown',
             previewStyle: 'vertical',
             height: '300px'
           },
           options));
-    }
+  
     return this.editor;
   }
   getMarkdown(): string {

@@ -1,7 +1,7 @@
 {
   "name": "ngx-tui-editor",
   "description": "Angular 2+ library for tui-editor",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/tylernhoward/ngx-tui-editor"
@@ -26,10 +26,10 @@
   "jsnext:main": "ngx-tui-editor.js",
   "typings": "ngx-tui-editor.d.ts",
   "dependencies": {
-    "tui-editor": "^1.0.1"
+    "tui-editor": "^1.4.0"
   },
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
+    "@angular/core": "^6.0.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   }

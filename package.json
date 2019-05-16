@@ -1,6 +1,6 @@
 {
   "name": "ngx-tui-editor",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -24,7 +24,6 @@
   },
   "private": false,
   "dependencies": {
-    "jquery": "^3.4.1",
     "tui-editor": "^1.4.0"
   },
   "devDependencies": {

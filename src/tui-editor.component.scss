@@ -2,3 +2,23 @@
 @import '~tui-editor/dist/tui-editor';
 @import '~codemirror/lib/codemirror';
 @import '~highlight.js/styles/github';
+
+.tui-toolbar-icons {
+    background: url('assets/tui-editor.png');
+    background-size: 218px 188px;
+    display: inline-block;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+  .tui-toolbar-icons {
+    background: url('assets/tui-editor-2x.png');
+    background-size: 218px 188px;
+    display: inline-block;
+  }
+}

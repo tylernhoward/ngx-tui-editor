@@ -4,7 +4,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
     selector: 'tui-editor',
     encapsulation: ViewEncapsulation.None,
     styleUrls: [
-        './tui-editor.component.scss'
+        './tui-editor.component.scss',
     ],
     template: '<div class = "ngx-tui-editor"></div>',
 })

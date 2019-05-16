@@ -24,6 +24,7 @@
   },
   "private": false,
   "dependencies": {
+    "jquery": "^3.4.1",
     "tui-editor": "^1.4.0"
   },
   "devDependencies": {

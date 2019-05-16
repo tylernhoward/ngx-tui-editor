@@ -78,7 +78,8 @@ gulp.task('rollup:fesm', function () {
       // See "external" in https://rollupjs.org/#core-functionality
       external: [
         '@angular/core',
-        '@angular/common'
+        '@angular/common',
+        'tui-editor'
       ],
 
       // Format of generated bundle
@@ -113,7 +114,8 @@ gulp.task('rollup:umd', function () {
       // See "external" in https://rollupjs.org/#core-functionality
       external: [
         '@angular/core',
-        '@angular/common'
+        '@angular/common',
+        'tui-editor'
       ],
 
       // Format of generated bundle
@@ -152,12 +154,22 @@ gulp.task('copy:build', function () {
 });
 
 /**
+ * Copy png needed for inline styles
+ */
+gulp.task('copy:png', function () {
+  return gulp.src([`${rootFolder}/node_modules/tui-editor/dist/*.png`])
+    .pipe(gulp.dest(`${distFolder}/assets`));
+});
+
+
+/**
  * 8. Copy package.json from /src to /dist
  */
 gulp.task('copy:manifest', function () {
   return gulp.src([`${srcFolder}/package.json`])
     .pipe(gulp.dest(distFolder));
 });
+
 
 /**
  * 9. Copy README.md from / to /dist
@@ -190,6 +202,7 @@ gulp.task('compile', function () {
     'rollup:fesm',
     'rollup:umd',
     'copy:build',
+    'copy:png',
     'copy:manifest',
     'copy:readme',
     'clean:build',

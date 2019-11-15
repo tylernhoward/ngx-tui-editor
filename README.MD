@@ -84,19 +84,75 @@ export class AppComponent {
   }
 }
 ```
+
+#### Service Functions
 The following functions can be called on the TuiService:
 
 | Function | Use | Returns |
 | -------- | --- | ------- |
-| getMarkdown( ) | Gets markdown syntax text from editor | string |
-| getHtml( ) | Gets html syntax text from editor | string |
-| getSelectedText( ) | Gets only selected text from editor | string |
-| insertText(text: string) | Inserts plain text into editor | void |
-| setHtml(text: string) | Inserts html text and formats into markdown in editor | void |
-| setMarkdown(text: string) | Inserts markdown text and formats into markdown syntax in editor | void |
-| hide( ) | Hides the editor pane | void |
-| show( ) | Shows the editor pane | void |
+| getMarkdown(editorId?: string) | Gets markdown syntax text from editor | string |
+| getHtml(editorId?: string) | Gets html syntax text from editor | string |
+| getSelectedText(editorId?: string) | Gets only selected text from editor | string |
+| insertText(text: string, editorId?: string) | Inserts plain text into editor | void |
+| setHtml(text: string, editorId?: string) | Inserts html text and formats into markdown in editor | void |
+| setMarkdown(text: string, editorId?: string) | Inserts markdown text and formats into markdown syntax in editor | void |
+| hide(editorId?: string) | Hides the editor pane | void |
+| show(editorId?: string) | Shows the editor pane | void |
 
+#### Component Outputs
+
+| Attribute   | Required | Type | Default | Description |
+| ----------- | -------- | ---- | ----- | ----------- |
+| `loaded` | No | `void` |  | This event will fire when the editor has loaded |
+| `onChangeMarkdown` | No | `string` |  | This event will be fired when you done typing and will return the markdown string |
+| `onChangeHTML` | No | `string` |  | This event will be fired when you are typing and will return the rendered html string |
+| `onChange` | No | `MarkdownData: {html: string, markdown: string}` |  | This event will be fired when you are typing and will return both the html and markdown from the editor |
+| `onBlurMarkdown` | No | `string` |  | This event will be fired when the editor is blurred and will return the markdown string |
+| `onBlurHTML` | No | `string` |  | This event will be fired when the editor is blurred and will return the rendered html string |
+| `onBlur` | No | `string` |  | This event will be fired when the editor is blurred and will return both the html and markdown from the editor |
+
+**Example**
+
+```html
+<tui-editor
+  [options]="options"
+  (loaded)="editorLoaded()"
+  (onChange)="onChange($event)"
+  (onBlur)="onBlur($event)"
+></tui-editor>
+```
+
+## Setup with Multiple Instances
+You can track the editorService instance by passing in an `editorId` in the options object. When you need to use any of the functions in the `TuiService` you will use the optional `editorId` you passed in with the options input.
+
+### Example
+Setting the editor id in the options
+```typescript
+options : {
+            ...
+            editorId: 'MyEditorId',
+            ...
+          },
+```
+
+Passing the editorId into the service call
+
+```typescript
+import { TuiService } from 'ngx-tui-editor';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  constructor(private editorService: TuiService){}
+  setHtml(){
+    this.editorService.setHtml("<h1>Hello World</h1>", "MyEditorId");
+  }
+}
+```
 
 ## Development
 

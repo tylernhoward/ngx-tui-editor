@@ -2,41 +2,70 @@ import { Injectable } from '@angular/core';
 import Editor from 'tui-editor'
 @Injectable()
 export class TuiService {
-  editor: any;
+  editor: any = {};
+  defaultId = 'ngx-editor-default';
   constructor() { }
   createEditor(options: any): any {
-      this.editor = Editor.factory(Object.assign({
-            el: document.querySelector('.ngx-tui-editor'),
-            initialEditType: 'markdown',
-            previewStyle: 'vertical',
-            height: '300px'
-          },
-          options));
+    const id = options.editorId || this.defaultId;
+    this.editor[id] = Editor.factory(Object.assign({
+      el: document.querySelector('.ngx-tui-editor'),
+      initialEditType: 'markdown',
+      previewStyle: 'vertical',
+      height: '300px'
+    },
+    options));
   
-    return this.editor;
+    return this.editor[id];
   }
-  getMarkdown(): string {
-    return this.editor.getMarkdown();
+  getMarkdown(id?: string): string {
+    id = id || this.defaultId;
+    if (this.editor && this.editor[id]) {
+      return this.editor[id].getMarkdown();
+    }
+    return '';
   }
-  getHtml(): string {
-    return this.editor.getHtml();
+  getHtml(id?: string): string {
+    id = id || this.defaultId;
+    if (this.editor && this.editor[id]) {
+      return this.editor[id].getHtml();
+    }
+    return '';
   }
-  getSelectedText(): string {
-    return this.editor.getSelectedText();
+  getSelectedText(id?: string): string {
+    id = id || this.defaultId;
+    if (this.editor && this.editor[id]) {
+      return this.editor[id].getSelectedText();
+    }
+    return '';
   }
-  insertText(text: string) {
-    this.editor.insertText(text)
+  insertText(text: string, id?: string) {
+    id = id || this.defaultId;
+    if (this.editor && this.editor[id]) {
+      this.editor[id].insertText(text);
+    }
   }
-  setHtml(text: string) {
-    this.editor.setHtml(text)
+  setHtml(text: string, id?: string) {
+    id = id || this.defaultId;
+    if (this.editor && this.editor[id]) {
+      this.editor[id].setHtml(text);
+    }
   }
-  setMarkdown(text: string) {
-    this.editor.setMarkdown(text)
+  setMarkdown(text: string, id?: string) {
+    id = id || this.defaultId;
+    if (this.editor && this.editor[id]) {
+      this.editor[id].setMarkdown(text);
+    }
   }
-  hide() {
-    return this.editor.hide();
+  hide(id?: string) {
+    id = id || this.defaultId;
+    if (this.editor && this.editor[id]) {
+      return this.editor[id].hide();
+    }
   }
-  show() {
-    return this.editor.show();
+  show(id?: string) {
+    id = id || this.defaultId;
+    if (this.editor && this.editor[id]) {
+      return this.editor[id].show();
+    }
   }
 }

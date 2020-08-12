@@ -1,4 +1,5 @@
-# This project is not being maintained. Please fork or see: https://github.com/beeman/ngx-tui for an actively updated library. 🎉
+# This project is not being actively maintained. 
+Please fork or see: https://github.com/beeman/ngx-tui for an actively updated library. 🎉
 
 # Angular ToastUI Editor
 

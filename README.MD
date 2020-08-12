@@ -1,3 +1,5 @@
+# This project is not being maintained. Please fork or see: https://github.com/beeman/ngx-tui for an actively updated library. 🎉
+
 # Angular ToastUI Editor
 
 Angular 2+ plugin for tui-editor [tui-editor](https://github.com/nhnent/tui.editor)
@@ -164,4 +166,4 @@ $ npm run build
 
 ## License
 
-MIT © [Tyler Howard](mailto:tylernhoward@gmail.com)
+[Tyler Howard](mailto:tylernhoward@gmail.com)
